@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Motion Duration Tiers */
+  --duration-micro: 100ms;
+  --duration-fast: 150ms;
+  --duration-standard: 220ms;
+  --duration-emphasis: 300ms;
+
+  /* Motion Easing Curves */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+}
+
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #F7F7F5;
+  color: #191c1b;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app-shell {
+  background-color: #F7F7F5;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   PREMIUM 3D PHYSICAL DEPTH SYSTEM
+   ========================================== */
+
+/* LEVEL 1: Small Physical Controls (Tag pills, sort dropdown, secondary buttons) */
+.depth-level-1,
+.depth-control {
+  background: linear-gradient(150deg, #FBFBF9 0%, #F4F3EE 100%);
+  box-shadow: inset 1px 1px 0px #ffffff, 
+              inset -1px -1px 0px rgba(25,28,27,0.03), 
+              0 2px 4px rgba(25,28,27,0.04), 
+              0 6px 14px rgba(25,28,27,0.03);
+}
+
+.depth-level-1:hover,
+.depth-control:hover {
+  box-shadow: inset 1px 1px 0px #ffffff, 
+              inset -1px -1px 0px rgba(25,28,27,0.04), 
+              0 3px 6px rgba(25,28,27,0.04), 
+              0 8px 18px rgba(25,28,27,0.04);
+}
+
+/* LEVEL 2: Primary Interactive Buttons (Write CTA, Start Reading, Create Article) */
+.depth-level-2,
+.btn-primary-3d {
+  background: linear-gradient(150deg, #097067 0%, #064c46 100%);
+  box-shadow: inset 1px 1px 0px rgba(255,255,255,0.4), 
+              inset -1px -1px 0px rgba(0,0,0,0.25), 
+              0 3px 6px rgba(7,94,86,0.18), 
+              0 10px 22px rgba(7,94,86,0.14);
+  transition: transform 150ms ease-out, box-shadow 150ms ease-out, background 150ms ease-out;
+}
+
+.depth-level-2:hover,
+.btn-primary-3d:hover {
+  transform: translateY(-1px);
+  box-shadow: inset 1px 1px 0px rgba(255,255,255,0.5), 
+              inset -1px -1px 0px rgba(0,0,0,0.25), 
+              0 4px 8px rgba(7,94,86,0.22), 
+              0 14px 28px rgba(7,94,86,0.18);
+}
+
+.depth-level-2:active,
+.btn-primary-3d:active {
+  transform: translateY(0);
+  box-shadow: inset 1px 1px 0px rgba(0,0,0,0.2), 
+              0 2px 4px rgba(7,94,86,0.15);
+}
+
+/* LEVEL 3: Large Molded Surfaces (Trending, Featured Story, Cards, Containers) */
+.depth-level-3,
+.depth-panel {
+  background: linear-gradient(160deg, #FAF9F6 0%, #F3F2EE 100%);
+  box-shadow: inset 1.2px 1.2px 0px #ffffff, 
+              inset -1.2px -1.2px 0px rgba(25,28,27,0.04), 
+              0 3px 8px rgba(25,28,27,0.04), 
+              0 16px 36px rgba(25,28,27,0.05);
+}
+
+.depth-card-interactive {
+  background: linear-gradient(160deg, #FAF9F6 0%, #F3F2EE 100%);
+  box-shadow: inset 1.2px 1.2px 0px #ffffff, 
+              inset -1.2px -1.2px 0px rgba(25,28,27,0.04), 
+              0 3px 8px rgba(25,28,27,0.04), 
+              0 16px 36px rgba(25,28,27,0.05);
+  transition: transform 180ms ease-out, box-shadow 180ms ease-out;
+}
+
+.depth-card-interactive:hover {
+  transform: translateY(-1px);
+  box-shadow: inset 1.5px 1.5px 0px #ffffff, 
+              inset -1.5px -1.5px 0px rgba(25,28,27,0.05), 
+              0 4px 10px rgba(25,28,27,0.05), 
+              0 20px 42px rgba(25,28,27,0.06);
+}
+
+/* LEVEL 4: Hero 'C.' Card (Floating Printed Booklet object) */
+.c-hero-card-3d {
+  background: linear-gradient(155deg, #FCFCFB 0%, #F2F1EC 100%);
+  box-shadow: inset 1.5px 1.5px 0px #ffffff, 
+              inset -2.5px -2.5px 0px rgba(25,28,27,0.08), 
+              0 4px 10px rgba(25,28,27,0.07), 
+              0 24px 52px rgba(25,28,27,0.09);
+  border: 1px solid rgba(255,255,255,0.7);
+  border-right-color: rgba(25,28,27,0.06);
+  border-bottom-color: rgba(25,28,27,0.08);
+}
+
+/* Recessed Inset Surfaces (Search Field, Inset Input Containers) */
+.depth-recessed,
+.search-recessed {
+  background: #F1F1EE;
+  box-shadow: inset 2px 2px 4px rgba(25,28,27,0.06), 
+              inset -2px -2px 5px rgba(255,255,255,0.85);
+  border: 1px solid rgba(25,28,27,0.03);
+}
+
+.search-recessed:focus-within {
+  border-color: rgba(7,94,86,0.3);
+  box-shadow: inset 2px 2px 4px rgba(7,94,86,0.08), 
+              inset -2px -2px 5px rgba(255,255,255,0.9);
+}
+
+/* ==========================================
+   BUTTER-SMOOTH HARDWARE ACCELERATED MOTION
+   ========================================== */
+
+/* Clean, 60fps Page Fade */
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Reveal */
+@keyframes modalEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Dropdown Reveal */
+@keyframes dropdownEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* One-time Pulse for Actions */
+@keyframes pulseOnce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.animate-page-enter {
+  animation: pageEnter 150ms var(--ease-out) forwards;
+  will-change: opacity;
+  transform: translateZ(0);
+}
+
+.animate-modal-enter {
+  animation: modalEnter 150ms var(--ease-out) forwards;
+  will-change: opacity, transform;
+}
+
+.animate-dropdown-enter {
+  animation: dropdownEnter 140ms var(--ease-out) forwards;
+  will-change: opacity, transform;
+}
+
+.animate-pulse-once {
+  animation: pulseOnce 250ms var(--ease-out);
+}
+
+/* Button & Control Transitions */
+.btn-primary-motion {
+  transition: opacity 150ms ease-out,
+              box-shadow 150ms ease-out,
+              background-color 150ms ease-out,
+              transform 150ms ease-out;
+  will-change: transform, opacity;
+}
+.btn-primary-motion:hover {
+  transform: translateY(-1px);
+}
+.btn-primary-motion:active {
+  transform: translateY(0);
+}
+
+.ctrl-transition {
+  transition: color 150ms ease-out,
+              background-color 150ms ease-out,
+              border-color 150ms ease-out,
+              box-shadow 150ms ease-out,
+              opacity 150ms ease-out,
+              transform 150ms ease-out;
+  will-change: opacity, color;
+}
+
+/* Accessibility: Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-page-enter,
+  .animate-modal-enter,
+  .animate-dropdown-enter,
+  .animate-pulse-once {
+    animation: none !important;
+  }
+  .btn-primary-motion:hover,
+  .ctrl-transition:hover {
+    transform: none !important;
+  }
+}
