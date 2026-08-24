@@ -3,9 +3,9 @@ spring:
     name: blog-backend
 
   datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/blog}
-    username: ${DATABASE_USERNAME:blog}
-    password: ${DATABASE_PASSWORD:blog_dev_password}
+  url: jdbc:${DATABASE_URL:postgresql://localhost:5432/blog}
+  username: ${DATABASE_USERNAME:blog}
+  password: ${DATABASE_PASSWORD:blog_dev_password}
 
   jpa:
     hibernate:
