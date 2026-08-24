@@ -3,9 +3,10 @@ spring:
     name: blog-backend
 
   datasource:
-    url: jdbc:${DATABASE_URL:postgresql://localhost:5432/blog}
-    username: ${DATABASE_USERNAME:blog}
-    password: ${DATABASE_PASSWORD:blog_dev_password}
+    url: jdbc:postgresql://${DATABASE_PGHOST}/${DATABASE_PGDATABASE}?sslmode=require
+    username: ${DATABASE_PGUSER}
+    password: ${DATABASE_PGPASSWORD}
+    driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
@@ -20,8 +21,8 @@ server:
 
 app:
   jwt:
-    secret: ${JWT_SECRET:dev-only-secret-key-for-local-development-only-32bytes-minimum}
+    secret: ${JWT_SECRET}
     access-token-expiration: ${JWT_ACCESS_EXPIRATION:900000}
 
   cors:
-    allowed-origin: ${CORS_ORIGIN:http://localhost:3000} 
+    allowed-origin: ${CORS_ORIGIN:https://compoze-one.vercel.app}
