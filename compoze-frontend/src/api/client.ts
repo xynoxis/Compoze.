@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8080/api';
+const BASE_URL = 'https://backend-6vbl.onrender.com/api';
 
 export interface ApiError {
   message: string;
