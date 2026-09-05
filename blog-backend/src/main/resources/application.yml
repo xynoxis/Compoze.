@@ -3,9 +3,9 @@ spring:
     name: blog-backend
 
   datasource:
-    url: jdbc:${DATABASE_URL:postgresql://localhost:5432/blog}
-    username: ${DATABASE_USERNAME:blog}
-    password: ${DATABASE_PASSWORD:blog_dev_password}
+    url: jdbc:${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
 
   jpa:
     hibernate:
@@ -20,7 +20,7 @@ server:
 
 app:
   jwt:
-    secret: ${JWT_SECRET:dev-only-secret-key-for-local-development-only-32bytes-minimum}
+    secret: ${JWT_SECRET}
     access-token-expiration: ${JWT_ACCESS_EXPIRATION:900000}
 
   cors:
